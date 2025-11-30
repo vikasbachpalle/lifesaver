@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h2>Register Donor</h2>
+
+    {% for msg in messages %}
+        <div class="message">{{ msg }}</div>
+    {% endfor %}
+
+    <form action="{% url 'registerdonor' %}" method="post">
+        {% csrf_token %}
+        <div class="form-row">
+            <label>Donor ID</label>
+            <input type="text" name="donorid">
+        </div>
+        <div class="form-row"><label>Name</label><input type="text" name="name"></div>
+        <div class="form-row"><label>Password</label><input type="password" name="password"></div>
+        <div class="form-row"><label>Blood Group</label><input type="text" name="bloodgroup"></div>
+        <div class="form-row"><label>Place</label><input type="text" name="place"></div>
+        <div class="form-row"><label>Phone</label><input type="text" name="phno"></div>
+
+        <input type="submit" value="Register">
+    </form>
+</div>
+{% endblock %}

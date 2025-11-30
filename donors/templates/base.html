@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LifeSaver</title>
+    <link rel="stylesheet" href="{% static 'donors/css/style.css' %}">
+</head>
+<body>
+
+<div class="nav">
+    <div class="nav-inner">
+        <a href="{% url 'registerdonor' %}">Register</a> |
+        <a href="{% url 'searchdonor' %}">Search</a> |
+        <a href="{% url 'donors_list' %}">All Donors</a> |
+        <a href="{% url 'donor_login' %}">Login</a> |
+        <a href="/admin/">Admin</a>
+    </div>
+</div>
+
+<div class="content">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

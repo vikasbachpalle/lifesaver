@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <h2>Search Donor</h2>
+
+    <form action="{% url 'searchdonor' %}" method="post">
+        {% csrf_token %}
+        <div class="form-row">
+            <label>Blood Group</label>
+            <input type="text" name="bloodgroup" placeholder="A+, O-, B+">
+        </div>
+        <input type="submit" value="Search">
+    </form>
+
+    {% if data %}
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Blood Group</th>
+                <th>Place</th>
+            </tr>
+            {% for d in data %}
+            <tr>
+                <td>{{ d.name }}</td>
+                <td>{{ d.phno }}</td>
+                <td>{{ d.bloodgroup }}</td>
+                <td>{{ d.place }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

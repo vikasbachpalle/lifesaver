@@ -1,0 +1,169 @@
+/* ===========================
+   GLOBAL BODY
+   =========================== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f4f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===========================
+   NAVIGATION BAR
+   =========================== */
+.nav {
+    background-color: #34495e;
+    padding: 12px 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.nav-inner a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.nav-inner a:hover {
+    color: #ffdd59;
+}
+
+/* ===========================
+   MAIN CONTAINER
+   =========================== */
+.container {
+    width: 90%;
+    max-width: 600px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 30px auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* ===========================
+   HEADINGS
+   =========================== */
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 18px;
+    font-size: 24px;
+}
+
+/* ===========================
+   FORM ELEMENTS
+   =========================== */
+.form-row {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d0d4d9;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #3498db;
+}
+
+/* ===========================
+   BUTTONS
+   =========================== */
+input[type="submit"],
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #2e86c1;
+}
+
+button.danger {
+    background-color: #e74c3c;
+}
+
+button.danger:hover {
+    background-color: #c0392b;
+}
+
+/* ===========================
+   MESSAGES (SUCCESS / ERROR)
+   =========================== */
+.message {
+    background-color: #2ecc71;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.error {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+/* ===========================
+   TABLES
+   =========================== */
+.table-container {
+    width: 95%;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+table th {
+    background-color: #34495e;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+}
+
+table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #ecf0f1;
+    font-size: 15px;
+}
+
+table tr:hover td {
+    background-color: #f7f7f7;
+}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h2>Update Profile</h2>
+
+    {% for m in messages %}
+    <div class="message">{{ m }}</div>
+    {% endfor %}
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="form-row"><label>Name</label>
+            <input type="text" name="name" value="{{ d.name }}">
+        </div>
+
+        <div class="form-row"><label>Blood Group</label>
+            <input type="text" name="bloodgroup" value="{{ d.bloodgroup }}">
+        </div>
+
+        <div class="form-row"><label>Place</label>
+            <input type="text" name="place" value="{{ d.place }}">
+        </div>
+
+        <div class="form-row"><label>Phone</label>
+            <input type="text" name="phno" value="{{ d.phno }}">
+        </div>
+
+        <div class="form-row"><label>New Password (optional)</label>
+            <input type="password" name="password">
+        </div>
+
+        <input type="submit" value="Update">
+    </form>
+</div>
+{% endblock %}
