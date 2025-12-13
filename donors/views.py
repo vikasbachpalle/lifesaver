@@ -106,16 +106,26 @@ def update_profile(req):
     d = Donor.objects.get(donorid=donorid)
 
     if req.method == 'POST':
-        d.name = req.POST.get('name')
-        d.bloodgroup = req.POST.get('bloodgroup')
-        d.place = req.POST.get('place')
-        d.phno = req.POST.get('phno')
-        # password change optional
+        name = req.POST.get('name')
+        bloodgroup = req.POST.get('bloodgroup')
+        place = req.POST.get('place')
+        phno = req.POST.get('phno')
         pwd = req.POST.get('password')
+
+        if not name:
+            messages.error(req, "Name cannot be empty")
+            return render(req, 'update_profile.html', {'d': d})
+
+        d.name = name
+        d.bloodgroup = bloodgroup
+        d.place = place
+        d.phno = phno
+
         if pwd:
             d.password = pwd
+
         d.save()
-        messages.success(req, "Profile updated")
+        messages.success(req, "Profile updated successfully")
         return redirect('profile')
 
     return render(req, 'update_profile.html', {'d': d})

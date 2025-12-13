@@ -1,39 +1,47 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h3 class="mb-4">Search Donor</h3>
+<div class="row justify-content-center">
+    <div class="col-md-6">
 
-<form method="post" class="row g-3 mb-4">
-    {% csrf_token %}
-    <div class="col-md-4">
-        <input type="text" name="bloodgroup" class="form-control" placeholder="Blood Group">
-    </div>
-    <div class="col-md-2">
-        <button class="btn btn-danger w-100">Search</button>
-    </div>
-</form>
+        <h3 class="text-center mb-4">Update Profile</h3>
 
-{% if data %}
-<table class="table table-bordered table-striped">
-    <thead class="table-danger">
-        <tr>
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Blood Group</th>
-            <th>Place</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for d in data %}
-        <tr>
-            <td>{{ d.name }}</td>
-            <td>{{ d.phno }}</td>
-            <td>{{ d.bloodgroup }}</td>
-            <td>{{ d.place }}</td>
-        </tr>
+        {% for m in messages %}
+            <div class="alert alert-info">{{ m }}</div>
         {% endfor %}
-    </tbody>
-</table>
-{% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label>Name</label>
+                <input type="text" name="name" class="form-control" value="{{ d.name }}">
+            </div>
+
+            <div class="mb-3">
+                <label>Blood Group</label>
+                <input type="text" name="bloodgroup" class="form-control" value="{{ d.bloodgroup }}">
+            </div>
+
+            <div class="mb-3">
+                <label>Place</label>
+                <input type="text" name="place" class="form-control" value="{{ d.place }}">
+            </div>
+
+            <div class="mb-3">
+                <label>Phone</label>
+                <input type="text" name="phno" class="form-control" value="{{ d.phno }}">
+            </div>
+
+            <div class="mb-3">
+                <label>New Password (optional)</label>
+                <input type="password" name="password" class="form-control">
+            </div>
+
+            <button class="btn btn-primary w-100">Update</button>
+        </form>
+
+    </div>
+</div>
 
 {% endblock %}
