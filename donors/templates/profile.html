@@ -1,19 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
-    <h2>{{ d.name }}'s Profile</h2>
 
-    <p><b>Donor ID:</b> {{ d.donorid }}</p>
-    <p><b>Blood Group:</b> {{ d.bloodgroup }}</p>
-    <p><b>Place:</b> {{ d.place }}</p>
-    <p><b>Phone:</b> {{ d.phno }}</p>
+<div class="row justify-content-center">
+    <div class="col-md-6">
 
-    <a href="{% url 'update_profile' %}">
-        <button>Update Profile</button>
-    </a>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-3">{{ d.name }}'s Profile</h4>
 
-    <a href="{% url 'donor_logout' %}">
-        <button style="margin-top:10px;background:red;">Logout</button>
-    </a>
+                <p><b>Donor ID:</b> {{ d.donorid }}</p>
+                <p><b>Blood Group:</b> {{ d.bloodgroup }}</p>
+                <p><b>Place:</b> {{ d.place }}</p>
+                <p><b>Phone:</b> {{ d.phno }}</p>
+
+                <a href="{% url 'update_profile' %}" class="btn btn-primary">
+                    Update Profile
+                </a>
+
+                <a href="{% url 'donor_logout' %}" class="btn btn-danger ms-2">
+                    Logout
+                </a>
+            </div>
+        </div>
+
+    </div>
 </div>
+
 {% endblock %}

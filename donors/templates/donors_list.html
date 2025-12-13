@@ -1,28 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
-    <h2>All Donors</h2>
 
-    <div class="table-container">
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Blood Group</th>
-                <th>Place</th>
-                <th>Phone</th>
-            </tr>
+<h3 class="mb-4">All Donors</h3>
 
-            {% for d in data %}
-            <tr>
-                <td>{{ d.donorid }}</td>
-                <td>{{ d.name }}</td>
-                <td>{{ d.bloodgroup }}</td>
-                <td>{{ d.place }}</td>
-                <td>{{ d.phno }}</td>
-            </tr>
-            {% endfor %}
-        </table>
-    </div>
-</div>
+<table class="table table-bordered table-hover">
+    <thead class="table-danger">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Blood Group</th>
+            <th>Place</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for d in data %}
+        <tr>
+            <td>{{ d.donorid }}</td>
+            <td>{{ d.name }}</td>
+            <td>{{ d.bloodgroup }}</td>
+            <td>{{ d.place }}</td>
+            <td>{{ d.phno }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
 {% endblock %}

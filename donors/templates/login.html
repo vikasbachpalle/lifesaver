@@ -1,23 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
-    <h2>Donor Login</h2>
 
-    {% for m in messages %}
-        <div class="error">{{ m }}</div>
-    {% endfor %}
+<div class="row justify-content-center">
+    <div class="col-md-4">
 
-    <form method="post">
-        {% csrf_token %}
-        <div class="form-row">
-            <label>Donor ID</label>
-            <input type="text" name="donorid">
-        </div>
-        <div class="form-row">
-            <label>Password</label>
-            <input type="password" name="password">
-        </div>
-        <input type="submit" value="Login">
-    </form>
+        <h3 class="text-center mb-4">Donor Login</h3>
+
+        {% for m in messages %}
+            <div class="alert alert-danger">{{ m }}</div>
+        {% endfor %}
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label class="form-label">Donor ID</label>
+                <input type="text" name="donorid" class="form-control">
+
+
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" name="password" class="form-control">
+            </div>
+
+            <button class="btn btn-danger w-100">Login</button>
+        </form>
+    </div>
 </div>
+
 {% endblock %}

@@ -3,7 +3,8 @@ from .models import Donor
 from django.contrib import messages
 
 def home_redirect(req):
-    return redirect('registerdonor')
+    return render(req, 'home.html')
+
 
 def registerdonor(req):
     if req.method == 'POST':

@@ -1,25 +1,51 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
-    <h2>Register Donor</h2>
 
-    {% for msg in messages %}
-        <div class="message">{{ msg }}</div>
-    {% endfor %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
 
-    <form action="{% url 'registerdonor' %}" method="post">
-        {% csrf_token %}
-        <div class="form-row">
-            <label>Donor ID</label>
-            <input type="text" name="donorid">
-        </div>
-        <div class="form-row"><label>Name</label><input type="text" name="name"></div>
-        <div class="form-row"><label>Password</label><input type="password" name="password"></div>
-        <div class="form-row"><label>Blood Group</label><input type="text" name="bloodgroup"></div>
-        <div class="form-row"><label>Place</label><input type="text" name="place"></div>
-        <div class="form-row"><label>Phone</label><input type="text" name="phno"></div>
+        <h3 class="text-center mb-4">Register Donor</h3>
 
-        <input type="submit" value="Register">
-    </form>
+        {% for msg in messages %}
+            <div class="alert alert-info">{{ msg }}</div>
+        {% endfor %}
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label class="form-label">Donor ID</label>
+                <input type="text" name="donorid" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" name="name" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" name="password" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Blood Group</label>
+                <input type="text" name="bloodgroup" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Place</label>
+                <input type="text" name="place" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Phone</label>
+                <input type="text" name="phno" class="form-control">
+            </div>
+
+            <button class="btn btn-danger w-100">Register</button>
+        </form>
+    </div>
 </div>
+
 {% endblock %}

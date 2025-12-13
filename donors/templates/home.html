@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row align-items-center">
+    <div class="col-md-6">
+        <h1 class="fw-bold text-danger">
+            Donate Blood, Save Lives ❤️
+        </h1>
+        <p class="fs-5 mt-3">
+            LifeSaver is a platform where blood donors and patients connect easily.
+            One donation can save up to three lives.
+        </p>
+
+        <a href="{% url 'registerdonor' %}" class="btn btn-danger btn-lg mt-3">
+            Become a Donor
+        </a>
+
+        <a href="{% url 'searchdonor' %}" class="btn btn-outline-danger btn-lg mt-3 ms-2">
+            Find Donor
+        </a>
+    </div>
+
+    <div class="col-md-6 text-center">
+      <img src="{% static 'donors/images/blood_donation.jpg' %}"
+           class="img-fluid rounded"
+           alt="Blood Donation">
+
+    </div>
+</div>
+
+<hr class="my-5">
+
+<div class="row text-center">
+    <div class="col-md-4">
+        <h4 class="text-danger">Quick Search</h4>
+        <p>Find donors by blood group instantly.</p>
+    </div>
+
+    <div class="col-md-4">
+        <h4 class="text-danger">Verified Donors</h4>
+        <p>Only registered donors available.</p>
+    </div>
+
+    <div class="col-md-4">
+        <h4 class="text-danger">Life Saving</h4>
+        <p>Your donation can save lives.</p>
+    </div>
+</div>
+
+{% endblock %}
