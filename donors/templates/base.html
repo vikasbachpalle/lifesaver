@@ -3,6 +3,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+
+    <!-- ✅ VERY IMPORTANT FOR MOBILE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>LifeSaver</title>
 
     <!-- Bootstrap CSS -->
@@ -19,7 +23,10 @@
         <!-- ☰ Mobile Toggle Button -->
         <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#navbarMenu">
+                data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
