@@ -72,7 +72,7 @@ python manage.py runserver
 Understanding Django MVT architecture
 Working with Django ORM and database models
 Implementing CRUD-based applications
-Practical experience with backend development
+Practical experience with backend development```
 
 👤 Author
 Vikas Bachpalle
