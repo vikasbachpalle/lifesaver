@@ -67,16 +67,17 @@ python manage.py migrate
 
 # 5. Run development server
 python manage.py runserver
+```
 
-📈 Learning Outcomes
-Understanding Django MVT architecture
-Working with Django ORM and database models
-Implementing CRUD-based applications
-Practical experience with backend development```
+## 📈 Learning Outcomes
+- Understanding Django MVT architecture
+- Working with Django ORM and database models
+- Implementing CRUD-based applications
+- Practical experience with backend development
 
-👤 Author
-Vikas Bachpalle
+## 👤 Author
+Vikas Bachpalle  
 GitHub: https://github.com/vikasbachpalle
 
-⚠️ Note
+## ⚠️ Note
 This project is created for learning and demonstration purposes.
